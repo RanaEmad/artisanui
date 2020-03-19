@@ -1,0 +1,26 @@
+{
+    "name": "rem/artisanui",
+    "description": "A user interface for Laravel artisan commands",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Rana Emad",
+            "email": "rana3emad@gmail.com"
+        }
+    ],
+    "require": {
+        "illuminate/support": "^7.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "REM\\ArtisanUi\\":"src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "REM\\ArtisanUi\\ArtisanUiServiceProvider"
+            ]
+        }
+    }
+}
