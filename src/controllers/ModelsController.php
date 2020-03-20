@@ -4,7 +4,6 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Artisan;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Validator;
 
 class ModelsController extends Controller
 {

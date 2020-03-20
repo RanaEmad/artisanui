@@ -19,4 +19,7 @@ Route::get('/test', "REM\ArtisanUi\Controllers\TestController@index");
 Route::middleware(['web'])->group(function () {
     Route::get('/artisanui/models/generate', "REM\ArtisanUi\Controllers\ModelsController@index");
     Route::post('/artisanui/models/generate', "REM\ArtisanUi\Controllers\ModelsController@generate");
+   
+    Route::get('/artisanui/controllers/generate', "REM\ArtisanUi\Controllers\ControllersController@index");
+    Route::post('/artisanui/controllers/generate', "REM\ArtisanUi\Controllers\ControllersController@generate");
 });
