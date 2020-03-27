@@ -16,6 +16,7 @@
     </div>
 @endif
 
+    <h3 class="mb-4 text-secondary">Generate Model</h3>
     <form action="/artisanui/models" method="POST">
         @csrf 
         <div class="form-group">

@@ -16,6 +16,7 @@
     </div>
 @endif
 
+<h3 class="mb-4 text-secondary">Generate Test</h3>
     <form action="/artisanui/tests" method="POST">
         @csrf 
         <div class="form-group">
