@@ -25,4 +25,7 @@ Route::middleware(['web'])->group(function () {
     
     Route::get('/artisanui/migrations/generate', "REM\ArtisanUi\Controllers\MigrationsController@index");
     Route::post('/artisanui/migrations/generate', "REM\ArtisanUi\Controllers\MigrationsController@generate");
+    
+    Route::get('/artisanui/seeders/generate', "REM\ArtisanUi\Controllers\SeedersController@index");
+    Route::post('/artisanui/seeders/generate', "REM\ArtisanUi\Controllers\SeedersController@generate");
 });
