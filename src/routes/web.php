@@ -22,4 +22,7 @@ Route::middleware(['web'])->group(function () {
    
     Route::get('/artisanui/controllers/generate', "REM\ArtisanUi\Controllers\ControllersController@index");
     Route::post('/artisanui/controllers/generate', "REM\ArtisanUi\Controllers\ControllersController@generate");
+    
+    Route::get('/artisanui/migrations/generate', "REM\ArtisanUi\Controllers\MigrationsController@index");
+    Route::post('/artisanui/migrations/generate', "REM\ArtisanUi\Controllers\MigrationsController@generate");
 });
