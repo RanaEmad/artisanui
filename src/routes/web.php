@@ -17,21 +17,21 @@ use Illuminate\Support\Facades\Route;
 Route::get('/test', "REM\ArtisanUi\Controllers\TestController@index");
 
 Route::middleware(['web'])->group(function () {
-    Route::get('/artisanui/models/generate', "REM\ArtisanUi\Controllers\ModelsController@index");
-    Route::post('/artisanui/models/generate', "REM\ArtisanUi\Controllers\ModelsController@generate");
+    Route::get('/artisanui/models', "REM\ArtisanUi\Controllers\ModelsController@index");
+    Route::post('/artisanui/models', "REM\ArtisanUi\Controllers\ModelsController@generate");
    
-    Route::get('/artisanui/controllers/generate', "REM\ArtisanUi\Controllers\ControllersController@index");
-    Route::post('/artisanui/controllers/generate', "REM\ArtisanUi\Controllers\ControllersController@generate");
+    Route::get('/artisanui/controllers', "REM\ArtisanUi\Controllers\ControllersController@index");
+    Route::post('/artisanui/controllers', "REM\ArtisanUi\Controllers\ControllersController@generate");
     
-    Route::get('/artisanui/migrations/generate', "REM\ArtisanUi\Controllers\MigrationsController@index");
-    Route::post('/artisanui/migrations/generate', "REM\ArtisanUi\Controllers\MigrationsController@generate");
+    Route::get('/artisanui/migrations', "REM\ArtisanUi\Controllers\MigrationsController@index");
+    Route::post('/artisanui/migrations', "REM\ArtisanUi\Controllers\MigrationsController@generate");
     
-    Route::get('/artisanui/seeders/generate', "REM\ArtisanUi\Controllers\SeedersController@index");
-    Route::post('/artisanui/seeders/generate', "REM\ArtisanUi\Controllers\SeedersController@generate");
+    Route::get('/artisanui/seeders', "REM\ArtisanUi\Controllers\SeedersController@index");
+    Route::post('/artisanui/seeders', "REM\ArtisanUi\Controllers\SeedersController@generate");
     
-    Route::get('/artisanui/factories/generate', "REM\ArtisanUi\Controllers\FactoriesController@index");
-    Route::post('/artisanui/factories/generate', "REM\ArtisanUi\Controllers\FactoriesController@generate");
+    Route::get('/artisanui/factories', "REM\ArtisanUi\Controllers\FactoriesController@index");
+    Route::post('/artisanui/factories', "REM\ArtisanUi\Controllers\FactoriesController@generate");
     
-    Route::get('/artisanui/tests/generate', "REM\ArtisanUi\Controllers\TestsController@index");
-    Route::post('/artisanui/tests/generate', "REM\ArtisanUi\Controllers\TestsController@generate");
+    Route::get('/artisanui/tests', "REM\ArtisanUi\Controllers\TestsController@index");
+    Route::post('/artisanui/tests', "REM\ArtisanUi\Controllers\TestsController@generate");
 });

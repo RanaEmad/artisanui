@@ -16,7 +16,7 @@
     </div>
 @endif
 
-    <form action="/artisanui/models/generate" method="POST">
+    <form action="/artisanui/models" method="POST">
         @csrf 
         <div class="form-group">
             <label for="name">Creation Name</label>
