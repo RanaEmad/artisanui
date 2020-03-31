@@ -1,6 +1,7 @@
 <?php
 namespace REM\ArtisanUi\Controllers;
 use App\Http\Controllers\Controller;
+use Exception;
 use Illuminate\Support\Facades\Artisan;
 
 use Illuminate\Http\Request;
@@ -16,9 +17,14 @@ class FactoriesController extends Controller
             "name"=>"required"
         ]);
         $attributes=$this->checkExistence($attributes,"model");  
-
-        Artisan::call("make:factory",$attributes);
-        return redirect()->back()->with("status","Generated Successfully!");
+    
+        try{
+            Artisan::call("make:factory",$attributes);
+            return redirect()->back()->with("status","Generated Successfully!");
+        }
+        catch( Exception $e){
+            return redirect()->back()->with("error",$e->getMessage());
+        }
     }
 
     protected function checkExistence($attributes,$attribute){

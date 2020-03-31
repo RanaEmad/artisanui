@@ -9,6 +9,7 @@
 <body>
    @include('artisanui::layout/navbar')
     <div class="container">
+        @include('artisanui::layout/alerts')
         @yield('main')
     </div>
 

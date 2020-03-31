@@ -1,21 +1,6 @@
 @extends('artisanui::layout/layout')
 @section('main')
 
-@if ($errors->all())
-    @foreach ($errors->all() as $error)
-        <div class="alert alert-danger">
-            {{$error}}
-        </div>
-    @endforeach
-    
-@endif
-
-@if (session("status"))
-    <div class="alert alert-success">
-        {{session("status")}}
-    </div>
-@endif
-
 <h3 class="mb-4 text-secondary">Generate Controller</h3>
     <form action="/artisanui/controllers" method="POST">
         @csrf 

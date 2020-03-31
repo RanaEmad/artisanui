@@ -1,6 +1,7 @@
 <?php
 namespace REM\ArtisanUi\Controllers;
 use App\Http\Controllers\Controller;
+use Exception;
 use Illuminate\Support\Facades\Artisan;
 
 use Illuminate\Http\Request;
@@ -15,7 +16,12 @@ class SeedersController extends Controller
         $attributes=$request->validate([
             "name"=>"required"
         ]);
-        Artisan::call("make:seeder",$attributes);
-        return redirect()->back()->with("status","Generated Successfully!");
+        try{
+            Artisan::call("make:seeder",$attributes);
+            return redirect()->back()->with("status","Generated Successfully!");
+        }
+        catch( Exception $e){
+            return redirect()->back()->with("error",$e->getMessage());
+        }
     }
 }

@@ -1,6 +1,7 @@
 <?php
 namespace REM\ArtisanUi\Controllers;
 use App\Http\Controllers\Controller;
+use Exception;
 use Illuminate\Support\Facades\Artisan;
 
 use Illuminate\Http\Request;
@@ -20,8 +21,13 @@ class ControllersController extends Controller
         $attributes=$this->checkExistence($attributes,"model");  
         $attributes=$this->checkExistence($attributes,"parent");  
 
-        Artisan::call("make:controller",$attributes);
-        return redirect()->back()->with("status","Generated Successfully!");
+        try{
+            Artisan::call("make:controller",$attributes);
+            return redirect()->back()->with("status","Generated Successfully!");
+        }
+        catch( Exception $e){
+            return redirect()->back()->with("error",$e->getMessage());
+        }
     }
 
     protected function checkExistence($attributes,$attribute){
