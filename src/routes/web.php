@@ -17,6 +17,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/test', "REM\ArtisanUi\Controllers\TestController@index");
 
 Route::middleware(['web'])->group(function () {
+    Route::get('/artisanui', "REM\ArtisanUi\Controllers\ModelsController@index");
+
     Route::get('/artisanui/models', "REM\ArtisanUi\Controllers\ModelsController@index");
     Route::post('/artisanui/models', "REM\ArtisanUi\Controllers\ModelsController@generate");
    
